@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#061a35">
+<meta name="description" content="KCST Data Center — your personal data platform to store, manage, and access website data from anywhere.">
+<title>KCST Data Center | Your Data, Your Control</title>
+<style>
+:root{--navy:#061a35;--navy2:#09264a;--blue:#08b9f4;--cyan:#20e0e8;--ink:#11284a;--muted:#61738d;--white:#fff;--green:#14b86e;--line:#dce7f3;--surface:#f4f8fc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(5,22,45,.94);backdrop-filter:blur(12px);border-bottom:1px solid #ffffff19;color:white}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.2px}.brand-mark{height:43px;width:43px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),#1767ff);box-shadow:0 5px 24px #08b9f455}.brand-mark svg{width:28px}.brand small{display:block;color:#8ddfff;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}.navlinks{display:flex;align-items:center;gap:28px;font-size:14px;color:#d4e5f8}.navlinks a:hover{color:var(--cyan)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:12px;padding:13px 20px;font-weight:750;cursor:pointer;transition:.2s;background:linear-gradient(135deg,#08b9f4,#1675ff);color:white;box-shadow:0 8px 24px #0789ef33}.btn:hover{transform:translateY(-2px);filter:brightness(1.07)}.btn.secondary{background:#ffffff0c;border:1px solid #ffffff40;box-shadow:none;color:white}.btn.light{background:white;color:#0a3a70;box-shadow:none;border:1px solid #d7e5f5}.menu-btn{display:none;background:none;border:1px solid #ffffff50;border-radius:9px;color:#fff;padding:8px 11px;font-size:20px}
+.hero{overflow:hidden;position:relative;background:radial-gradient(ellipse at 75% 30%,#0b5590 0%,transparent 38%),linear-gradient(135deg,#04152d,#082a51 60%,#061a35);color:white;padding:86px 0 78px}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:40px 40px;mask-image:linear-gradient(to bottom,black,transparent)}.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:54px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #37d5f455;background:#0bbcf41a;border-radius:999px;padding:7px 13px;font-size:12px;font-weight:750;letter-spacing:1px;text-transform:uppercase;color:#91edff}.pulse{width:7px;height:7px;border-radius:50%;background:#22e8b3;box-shadow:0 0 0 5px #22e8b322}h1{font-size:clamp(42px,5.4vw,68px);line-height:1.05;letter-spacing:-2px;margin:24px 0 20px}.gradient-text{background:linear-gradient(90deg,#15d3f4,#54a8ff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:570px;color:#c3d8ee;font-size:18px;margin:0 0 28px}.hero-actions{display:flex;gap:13px;flex-wrap:wrap}.trustline{margin-top:28px;color:#9ebbd7;font-size:13px;display:flex;gap:17px;flex-wrap:wrap}.trustline span:before{content:"✓";color:#22e8b3;font-weight:900;margin-right:7px}
+.server-scene{position:relative;min-height:400px;display:grid;place-items:center}.glow{position:absolute;width:310px;height:310px;border-radius:50%;background:#00aaff2b;filter:blur(38px)}.orbit{position:absolute;width:380px;height:120px;border:2px solid #00c8ff80;border-radius:50%;transform:rotate(-13deg);box-shadow:0 0 28px #00bfff30}.orbit.two{width:330px;height:90px;transform:rotate(17deg);border-color:#35f3dc75}.cloud{position:absolute;top:7px;z-index:2;color:#41dafa;filter:drop-shadow(0 0 16px #0abfff88)}.server-stack{z-index:3;width:min(250px,70%);transform:perspective(800px) rotateY(-10deg);filter:drop-shadow(0 25px 35px #0009)}.server-unit{height:75px;margin:10px 0;border:1px solid #39bfff;background:linear-gradient(110deg,#173d64,#07172e 70%);border-radius:10px;box-shadow:inset 0 1px #ffffff24,0 0 18px #00aaff20;display:flex;align-items:center;padding:0 18px;gap:12px}.server-unit:before{content:"";width:7px;height:7px;background:#23edba;border-radius:50%;box-shadow:0 0 10px #23edba}.server-lines{flex:1}.server-lines i{display:block;height:4px;border-radius:3px;background:#1a9fe5;margin:7px 0;width:78%;box-shadow:0 0 8px #0aaaff}.server-lines i:nth-child(2){width:52%;background:#285a86}.server-icon{font-size:20px;color:#5cceff}.float-chip{position:absolute;z-index:4;background:#0b2d50dd;border:1px solid #4bd6ff55;color:#dff9ff;border-radius:12px;padding:10px 13px;font-size:12px;box-shadow:0 10px 28px #0003}.float-chip strong{display:block;font-size:14px}.chip-one{top:76px;left:0}.chip-two{right:0;bottom:75px}.chip-three{left:12px;bottom:42px}
+.stats{position:relative;margin-top:-1px;background:#071d39;color:white;padding:25px 0;border-top:1px solid #ffffff14}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.stat{display:flex;gap:12px;align-items:center;justify-content:center;border-right:1px solid #ffffff20}.stat:last-child{border:0}.stat-icon{font-size:24px;color:#32d8fa}.stat strong{display:block;font-size:17px}.stat small{display:block;color:#9db7d4;font-size:12px}
+section{padding:82px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 42px}.kicker{color:#008dd0;font-size:12px;text-transform:uppercase;letter-spacing:1.7px;font-weight:850}.section-head h2{font-size:clamp(30px,4vw,43px);letter-spacing:-1px;line-height:1.15;margin:12px 0}.section-head p{color:var(--muted);margin:0;font-size:16px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.feature{padding:27px;border:1px solid var(--line);border-radius:18px;background:white;box-shadow:0 8px 30px #09264a08;transition:.2s}.feature:hover{transform:translateY(-4px);box-shadow:0 15px 35px #09264a12;border-color:#a7dfff}.feature-icon{width:51px;height:51px;border-radius:15px;display:grid;place-items:center;font-size:24px;background:#e5f8ff;color:#008ed4}.feature:nth-child(2) .feature-icon{background:#e5fff3;color:#0b9e5d}.feature:nth-child(3) .feature-icon{background:#f0eaff;color:#7544dc}.feature h3{margin:18px 0 7px;font-size:19px}.feature p{margin:0;color:var(--muted);font-size:14px}
+.workspace{background:var(--surface)}.workspace-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:center}.workspace-copy h2{font-size:clamp(31px,4vw,43px);line-height:1.13;letter-spacing:-1px;margin:12px 0 16px}.workspace-copy p{color:var(--muted)}.check-list{padding:0;list-style:none;margin:24px 0}.check-list li{margin:12px 0;color:#25415f}.check-list li:before{content:"✓";display:inline-grid;place-items:center;width:22px;height:22px;margin-right:10px;border-radius:50%;background:#dcfff0;color:#078c54;font-weight:900}.dashboard{border-radius:18px;background:#fff;border:1px solid #d8e5f2;box-shadow:0 25px 65px #09264a18;overflow:hidden}.dash-top{background:#0a2343;color:white;padding:17px 20px;display:flex;justify-content:space-between;align-items:center}.dash-top strong{font-size:14px}.live{font-size:11px;color:#6df2c2}.dash-body{padding:22px}.dash-label{font-size:11px;color:#6d8098;text-transform:uppercase;letter-spacing:1px;font-weight:800}.dash-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:13px 0 23px}.dash-card{padding:14px;border:1px solid #e0eaf4;border-radius:12px;background:#fbfdff}.dash-card span{font-size:20px}.dash-card b{display:block;font-size:23px;margin-top:5px;color:#0b2a4b}.dash-card small{color:#75869b;font-size:11px}.table-row{display:grid;grid-template-columns:1.1fr 1fr .7fr;gap:8px;padding:12px 8px;border-bottom:1px solid #edf2f7;font-size:12px;color:#526780}.table-row.head{font-size:10px;text-transform:uppercase;color:#8a9bb0;font-weight:800}.status{display:inline-block;background:#ddfff0;color:#07814c;border-radius:20px;padding:3px 8px;font-size:10px;font-weight:800}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.step{padding:24px 23px;border-left:2px solid #bceaff}.step-num{font-size:12px;font-weight:900;color:#058bc9;letter-spacing:1px}.step h3{margin:8px 0;font-size:19px}.step p{font-size:14px;color:var(--muted);margin:0}
+.cta{padding:0 0 82px}.cta-panel{padding:48px;border-radius:24px;background:radial-gradient(ellipse at 90% 10%,#1173a8,transparent 35%),linear-gradient(125deg,#061a35,#0a3764);color:white;display:flex;align-items:center;justify-content:space-between;gap:30px;overflow:hidden}.cta-panel h2{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:0 0 12px}.cta-panel p{margin:0;color:#c1d7ee;max-width:600px}.cta-actions{display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0}
+.faq{background:#f7faff}.faq-list{max-width:800px;margin:auto}.faq details{border:1px solid #dce7f3;border-radius:12px;background:white;margin:11px 0;padding:17px 20px}.faq summary{font-weight:750;cursor:pointer}.faq details p{color:var(--muted);font-size:14px;margin:12px 0 0}
+footer{background:#04152b;color:#d8e7f7;padding:35px 0 22px}.footer-main{display:flex;align-items:center;justify-content:space-between;gap:25px;padding-bottom:25px;border-bottom:1px solid #ffffff20}.footer-main p{color:#92aac4;font-size:13px;margin:5px 0}.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:#b8cbe0}.copyright{padding-top:18px;color:#7992ad;font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.notice{position:fixed;right:18px;bottom:18px;z-index:50;max-width:330px;background:#09294c;color:#fff;padding:15px 18px;border:1px solid #38cfff77;border-radius:13px;box-shadow:0 15px 40px #00102055;display:none;font-size:14px}.notice.show{display:block;animation:pop .25s ease}@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:850px){.navlinks{display:none;position:absolute;left:4%;right:4%;top:70px;background:#08264a;border:1px solid #ffffff25;border-radius:14px;padding:18px;flex-direction:column;align-items:stretch;gap:15px}.navlinks.open{display:flex}.menu-btn{display:block}.nav>.btn{display:none}.hero{padding:62px 0}.hero-grid,.workspace-grid{grid-template-columns:1fr;gap:35px}.hero-copy{text-align:center}.hero p{margin-left:auto;margin-right:auto}.hero-actions,.trustline{justify-content:center}.server-scene{min-height:350px}.features{grid-template-columns:repeat(2,1fr)}.workspace-copy{text-align:center}.check-list{display:inline-block;text-align:left}.cta-panel{align-items:flex-start;flex-direction:column}.stats-grid{grid-template-columns:repeat(2,1fr);row-gap:20px}.stat:nth-child(2){border:0}.how-grid{gap:15px}}
+@media(max-width:560px){.nav{height:68px}.brand{font-size:14px}.brand-mark{width:38px;height:38px}.hero{padding:52px 0}.hero h1{letter-spacing:-1.5px}.hero p{font-size:16px}.server-scene{min-height:300px}.orbit{width:290px;height:95px}.orbit.two{width:255px}.server-unit{height:61px}.chip-one{top:38px}.chip-two{bottom:45px}.chip-three{bottom:17px}.stats-grid{gap:17px 8px}.stat{justify-content:flex-start;padding-left:5px}.stat strong{font-size:14px}.stat small{font-size:10px}.features,.how-grid{grid-template-columns:1fr}.feature{padding:23px}.section-head{margin-bottom:30px}.section-head h2{font-size:32px}section{padding:62px 0}.dash-body{padding:14px}.dash-cards{gap:6px}.dash-card{padding:10px 8px}.dash-card b{font-size:19px}.table-row{font-size:10px}.cta-panel{padding:30px 23px}.footer-main{align-items:flex-start;flex-direction:column}.copyright{flex-direction:column}.hero-actions .btn{width:100%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="KCST Data Center home">
+      <span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M11 25H8a6 6 0 0 1 0-12 9 9 0 0 1 17-2 7 7 0 0 1 2 14h-2" stroke="white" stroke-width="2.7" stroke-linecap="round"/><rect x="12" y="19" width="17" height="5" rx="1.5" fill="white"/><rect x="12" y="27" width="17" height="5" rx="1.5" fill="white"/><circle cx="15" cy="21.5" r="1" fill="#0876db"/><circle cx="15" cy="29.5" r="1" fill="#0876db"/></svg></span>
+      <span>KCST <small>Data Center</small></span>
+    </a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#features">Features</a><a href="#workspace">Preview</a><a href="#how">How It Works</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#contact">Get Started <span>↗</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="pulse"></span> Your Personal Data Platform</div>
+      <h1>Your Data.<br><span class="gradient-text">Your Control.</span></h1>
+      <p>Introducing KCST Data Center — a personal platform concept to store, organize, and access your website data from anywhere, with a setup designed around your needs.</p>
+      <div class="hero-actions"><a class="btn" href="#features">Explore Features <span>→</span></a><a class="btn secondary" href="#how">How It Works</a></div>
+      <div class="trustline"><span>Custom-built approach</span><span>Web-ready design</span><span>Scalable architecture</span></div>
+    </div>
+    <div class="server-scene" aria-label="Illustration of cloud-connected servers">
+      <div class="glow"></div><div class="orbit"></div><div class="orbit two"></div>
+      <div class="cloud"><svg width="120" height="85" viewBox="0 0 120 85" fill="none"><path d="M31 64H91C107 64 114 52 109 39C106 30 98 26 88 27C82 8 62 4 48 15C41 20 37 28 37 35C20 30 7 42 10 54C12 61 20 64 31 64Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M47 43v17m0-17-7 7m7-7 7 7M72 59V42m0 17-7-7m7 7 7-7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="server-stack"><div class="server-unit"><div class="server-lines"><i></i><i></i></div><span class="server-icon">▤</span></div><div class="server-unit"><div class="server-lines"><i></i><i></i></div><span class="server-icon">▤</span></div><div class="server-unit"><div class="server-lines"><i></i><i></i></div><span class="server-icon">▤</span></div><div class="server-unit"><div class="server-lines"><i></i><i></i></div><span class="server-icon">▤</span></div></div>
+      <div class="float-chip chip-one">☁️ <strong>Cloud-connected</strong><span>Access from your devices</span></div>
+      <div class="float-chip chip-two">🔐 <strong>Privacy-minded</strong><span>Control your own setup</span></div>
+      <div class="float-chip chip-three">↻ <strong>Backup-ready</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats"><div class="container stats-grid">
+  <div class="stat"><span class="stat-icon">▣</span><div><strong>One Platform</strong><small>Organize your data</small></div></div>
+  <div class="stat"><span class="stat-icon">⌘</span><div><strong>Custom Setup</strong><small>Built for your workflow</small></div></div>
+  <div class="stat"><span class="stat-icon">↗</span><div><strong>Anywhere Access</strong><small>With secure deployment</small></div></div>
+  <div class="stat"><span class="stat-icon">⟲</span><div><strong>Backup Options</strong><small>Plan for data recovery</small></div></div>
+</div></div>
+
+<section id="features"><div class="container">
+  <div class="section-head"><span class="kicker">Everything in one place</span><h2>A smarter home for your <span class="gradient-text">website data</span></h2><p>Plan, organize, and manage the information your websites and business applications depend on.</p></div>
+  <div class="features">
+    <article class="feature"><div class="feature-icon">👤</div><h3>User Accounts</h3><p>Organize user profiles, access levels, and account records with a carefully configured authentication system.</p></article>
+    <article class="feature"><div class="feature-icon">📦</div><h3>Products & Inventory</h3><p>Keep product details, categories, stock information, and catalog data together.</p></article>
+    <article class="feature"><div class="feature-icon">🛒</div><h3>Orders & Records</h3><p>Build a central place for order information and the records used by your applications.</p></article>
+    <article class="feature"><div class="feature-icon">📁</div><h3>File Storage</h3><p>Plan file uploads and document storage with access permissions and size limits.</p></article>
+    <article class="feature"><div class="feature-icon">🔄</div><h3>Backups & Recovery</h3><p>Design scheduled backups and recovery checks to help protect important data.</p></article>
+    <article class="feature"><div class="feature-icon">🔌</div><h3>Website API</h3><p>Connect your website to a backend API instead of exposing database credentials in browser code.</p></article>
+  </div>
+</div></section>
+
+<section class="workspace" id="workspace"><div class="container workspace-grid">
+  <div class="workspace-copy"><span class="kicker">Control at a glance</span><h2>A clean dashboard for your data operations</h2><p>Use a simple control panel concept to bring your key records and storage activity into one workspace.</p>
+    <ul class="check-list"><li>Manage user and product records</li><li>Review orders and uploaded files</li><li>Monitor backup status</li><li>Connect your own website and API</li></ul>
+    <a class="btn" href="#contact">Plan Your Setup <span>→</span></a>
+  </div>
+  <div class="dashboard" aria-label="Illustrative dashboard preview">
+    <div class="dash-top"><strong>KCST / Overview</strong><span class="live">● UI PREVIEW</span></div>
+    <div class="dash-body"><div class="dash-label">Sample overview</div>
+      <div class="dash-cards"><div class="dash-card"><span>👥</span><b>128</b><small>Users (sample)</small></div><div class="dash-card"><span>📦</span><b>64</b><small>Products (sample)</small></div><div class="dash-card"><span>🛍️</span><b>32</b><small>Orders (sample)</small></div></div>
+      <div class="dash-label">Recent activity (illustrative)</div>
+      <div class="table-row head"><span>ITEM</span><span>TYPE</span><span>STATUS</span></div>
+      <div class="table-row"><span>Website database</span><span>Database</span><span><i class="status">Example</i></span></div>
+      <div class="table-row"><span>Product catalog</span><span>Records</span><span><i class="status">Example</i></span></div>
+      <div class="table-row"><span>Weekly backup</span><span>Backup</span><span><i class="status">Planned</i></span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="how"><div class="container">
+  <div class="section-head"><span class="kicker">Simple by design</span><h2>How KCST Data Center can work</h2><p>A practical path from a webpage concept to a secure, working backend.</p></div>
+  <div class="how-grid"><article class="step"><span class="step-num">STEP 01</span><h3>Choose your data</h3><p>Decide what to store: user accounts, products, orders, files, and application records.</p></article><article class="step"><span class="step-num">STEP 02</span><h3>Set up the backend</h3><p>Configure the database, API, authentication, permissions, and secure remote access.</p></article><article class="step"><span class="step-num">STEP 03</span><h3>Connect & protect</h3><p>Connect your webpage, test access rules, and schedule backups with recovery checks.</p></article></div>
+</div></section>
+
+<div class="cta" id="contact"><div class="container"><div class="cta-panel"><div><h2>Ready to build your own<br><span class="gradient-text">KCST Data Center?</span></h2><p>Start with a clear plan for your data, your hardware, and secure access from anywhere.</p></div><div class="cta-actions"><a class="btn" href="mailto:sayyidshereef99@gmail.com">Contact KCST ↗</a><button class="btn secondary" id="copyEmail">Copy Email</button></div></div></div></div>
+
+<section class="faq" id="faq"><div class="container"><div class="section-head"><span class="kicker">Good to know</span><h2>Frequently asked questions</h2><p>Important details before connecting real data.</p></div>
+  <div class="faq-list">
+    <details><summary>Is this webpage connected to a live database?</summary><p>No. This file is a responsive landing page and visual dashboard preview only. The figures shown are sample values. A backend and database must be configured separately before it can store or display real information.</p></details>
+    <details><summary>Can I use my 1TB external hard drive?</summary><p>It can be used for files and backups on a home server. For online access, the computer must remain powered on and connected, and you should configure secure remote access, access controls, and an independent backup. An external drive alone does not make a website publicly accessible.</p></details>
+    <details><summary>Can I host this page on GitHub Pages?</summary><p>Yes. This is a static HTML page suitable for GitHub Pages. GitHub Pages serves the frontend; it does not run your custom database server or backend API.</p></details>
+    <details><summary>How will user accounts and uploads be secured?</summary><p>The backend should enforce authentication, authorization, file-size and file-type checks, rate limits, HTTPS, and regular backups. Never place database passwords or service-role keys in frontend JavaScript.</p></details>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="container"><div class="footer-main"><div class="brand"><span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M11 25H8a6 6 0 0 1 0-12 9 9 0 0 1 17-2 7 7 0 0 1 2 14h-2" stroke="white" stroke-width="2.7" stroke-linecap="round"/><rect x="12" y="19" width="17" height="5" rx="1.5" fill="white"/><rect x="12" y="27" width="17" height="5" rx="1.5" fill="white"/></svg></span><span>KCST Data Center<small>Simple · Secure · Powerful</small></span></div><div class="footer-links"><a href="#features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="mailto:sayyidshereef99@gmail.com">Email KCST</a></div></div><div class="copyright"><span>© <span id="year"></span> KCST Media Technology. All rights reserved.</span><span>Your Data, Your Control.</span></div></div></footer>
+<div class="notice" id="notice" role="status" aria-live="polite"></div>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navlinks=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕':'☰';});
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const notice=document.getElementById('notice');
+function showNotice(msg){notice.textContent=msg;notice.classList.add('show');window.clearTimeout(window.noticeTimer);window.noticeTimer=window.setTimeout(()=>notice.classList.remove('show'),3200);}
+document.getElementById('copyEmail').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('sayyidshereef99@gmail.com');showNotice('Email address copied: sayyidshereef99@gmail.com');}catch(e){showNotice('Email: sayyidshereef99@gmail.com');}});
+</script>
+</body>
+</html>
